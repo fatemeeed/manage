@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\Content\DeviceController;
 use App\Http\Controllers\Admin\Content\FormItemController;
 use App\Http\Controllers\Admin\Content\ProjectController;
+use App\Http\Controllers\Admin\Equipment\ReceiptController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -80,7 +81,17 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
     //equipment
     Route::prefix('equipment')->namespace('Equipment')->group(function(){
 
-        Route::prefix('entrepot')->group(function(){
+        Route::prefix('receipt')->group(function(){
+
+            Route::get('/create',[ReceiptController::class,'create'])->name('admin.equipment.receipt.create');
+            Route::post('/store',[ReceiptController::class,'store'])->name('admin.equipment.receipt.store');
+
+        });
+
+        Route::prefix('forward')->group(function(){
+
+            Route::get('/create',[ForwardController::class,'create'])->name('admin.equipment.forward.create');
+            Route::post('/store',[ForwardController::class,'store'])->name('admin.equipment.forward.store');
 
         });
         Route::prefix('attribute')->group(function(){

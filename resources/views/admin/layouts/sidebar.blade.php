@@ -125,7 +125,7 @@
 
                 <section class="sidebar-dropdown" >
 
-                    <a href="">رسید تجهیزات</a>
+                    <a href="{{ route('admin.equipment.receipt.create') }}">رسید تجهیزات</a>
                     <a href="">حواله تجهیزات </a>
                     <a href="">داشبورد تجهیزات</a>
                     <a href="">داشبورد رول</a>
