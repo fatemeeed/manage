@@ -103,9 +103,24 @@
 
 }
 
+
+
+
 .width-16-rem{
 
     width: 16rem;
+
+}
+
+.width-13-rem{
+
+    width: 13rem;
+
+}
+
+.width-8-rem{
+
+    width: 8rem;
 
 }
 
@@ -115,4 +130,18 @@
 
 .main-body {
     font-size: .8rem;
+    
+}
+
+.modal-header
+{
+display: block!important;
+}
+.modal-title
+{
+float: right;
+}
+.modal-header .close
+{
+float: left;
 }

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Equipment;
+namespace App\Http\Controllers\Admin\Customer;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ReceiptController extends Controller
+class MerchInfoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ReceiptController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.merchant.merch_info.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class ReceiptController extends Controller
      */
     public function create()
     {
-        return view('admin.equipment.psp_receipt.create');
+        //
     }
 
     /**
@@ -55,9 +55,10 @@ class ReceiptController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        return view('admin.merchant.merch_info.edit');
+        
     }
 
     /**

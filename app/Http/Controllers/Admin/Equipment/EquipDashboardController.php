@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Equipment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ReceiptController extends Controller
+class EquipDashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ReceiptController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.equipment.equip_dashboard.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class ReceiptController extends Controller
      */
     public function create()
     {
-        return view('admin.equipment.psp_receipt.create');
+        //
     }
 
     /**
@@ -44,9 +44,9 @@ class ReceiptController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view('admin.equipment.equip_dashboard.show');
     }
 
     /**

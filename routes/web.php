@@ -3,7 +3,14 @@
 use App\Http\Controllers\Admin\Content\DeviceController;
 use App\Http\Controllers\Admin\Content\FormItemController;
 use App\Http\Controllers\Admin\Content\ProjectController;
+use App\Http\Controllers\Admin\Control\MarketingController;
+use App\Http\Controllers\Admin\Customer\MerchInfoController;
+use App\Http\Controllers\Admin\Customer\CallController;
+use App\Http\Controllers\Admin\Equipment\EquipDashboardController;
+use App\Http\Controllers\Admin\Equipment\PspDeliveryController;
 use App\Http\Controllers\Admin\Equipment\ReceiptController;
+use App\Http\Controllers\Admin\Equipment\RolDashboardController;
+use App\Http\Controllers\Admin\Equipment\TechDeliveryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -81,22 +88,33 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
     //equipment
     Route::prefix('equipment')->namespace('Equipment')->group(function(){
 
-        Route::prefix('receipt')->group(function(){
+        Route::prefix('psp_receipt')->group(function(){
 
-            Route::get('/create',[ReceiptController::class,'create'])->name('admin.equipment.receipt.create');
-            Route::post('/store',[ReceiptController::class,'store'])->name('admin.equipment.receipt.store');
-
-        });
-
-        Route::prefix('forward')->group(function(){
-
-            Route::get('/create',[ForwardController::class,'create'])->name('admin.equipment.forward.create');
-            Route::post('/store',[ForwardController::class,'store'])->name('admin.equipment.forward.store');
+            Route::get('/create',[ReceiptController::class,'create'])->name('admin.equipment.psp_receipt.create');
+            Route::post('/store',[ReceiptController::class,'store'])->name('admin.equipment.psp_receipt.store');
 
         });
-        Route::prefix('attribute')->group(function(){
+
+        Route::prefix('psp_delivery')->group(function(){
+
+            Route::get('/create',[PspDeliveryController::class,'create'])->name('admin.equipment.psp_delivery.create');
+            Route::post('/store',[PspDeliveryController::class,'store'])->name('admin.equipment.psp_delivery.store');
 
         });
+        Route::prefix('technician_delivery')->group(function(){
+
+            Route::get('/create',[TechDeliveryController::class,'create'])->name('admin.equipment.technician_delivery.create');
+            Route::post('/store',[TechDeliveryController::class,'store'])->name('admin.equipment.technician_delivery.store');
+
+        });
+        Route::prefix('equipment_dashboard')->group(function(){
+
+            Route::get('/',[EquipDashboardController::class,'index'])->name('admin.equipment.equip_dashboard.index');
+            Route::get('/show',[EquipDashboardController::class,'show'])->name('admin.equipment.equip_dashboard.show');
+
+        });
+        
+        
 
 
     });
@@ -108,12 +126,46 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
     
         Route::prefix('merchant')->group(function(){
 
+            Route::get('/',[MerchInfoController::class,'index'])->name('admin.merchant.merch_info.index');
+            Route::get('/edit',[MerchInfoController::class,'edit'])->name('admin.merchant.merch_info.edit');
+            Route::post('/update',[MerchInfoController::class,'update'])->name('admin.merchant.merch_info.update');
+
+        });
+
+        Route::prefix('call_report')->group(function(){
+
+            Route::get('/',[CallController::class,'index'])->name('admin.merchant.call_report.index');
+            
+
         });
 
 
     });
 
     //pm
+
+    Route::prefix('control')->namespace('Control')->group(function(){
+
+    
+        Route::prefix('marketing')->group(function(){
+
+            Route::get('/',[MarketingController::class,'index'])->name('admin.control.marketing.index');
+            Route::get('/create',[MarketingController::class,'create'])->name('admin.control.marketing.create');
+            Route::post('/store',[MarketingController::class,'store'])->name('admin.control.marketing.store');
+            Route::get('/edit',[MarketingController::class,'edit'])->name('admin.control.marketing.edit');
+            Route::post('/update',[MarketingController::class,'update'])->name('admin.control.marketing.update');
+
+        });
+
+        Route::prefix('call_report')->group(function(){
+
+            Route::get('/',[CallController::class,'index'])->name('admin.merchant.call_report.index');
+            
+
+        });
+
+
+    });
 
     //vip
 

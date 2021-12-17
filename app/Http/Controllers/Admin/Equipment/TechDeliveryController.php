@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Equipment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ForwardController extends Controller
+class TechDeliveryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class ForwardController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.equipment.technician_delivery.create');
     }
 
     /**

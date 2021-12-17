@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Equipment;
+namespace App\Http\Controllers\Admin\Control;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ReceiptController extends Controller
+class MarketingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ReceiptController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.control.marketing.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class ReceiptController extends Controller
      */
     public function create()
     {
-        return view('admin.equipment.psp_receipt.create');
+        //
     }
 
     /**

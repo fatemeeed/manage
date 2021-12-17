@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Equipment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ReceiptController extends Controller
+class PspDeliveryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class ReceiptController extends Controller
      */
     public function create()
     {
-        return view('admin.equipment.psp_receipt.create');
+        return view('admin.equipment.psp_delivery.create');
     }
 
     /**
