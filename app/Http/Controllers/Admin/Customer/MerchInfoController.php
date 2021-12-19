@@ -14,7 +14,7 @@ class MerchInfoController extends Controller
      */
     public function index()
     {
-        return view('admin.merchant.merch_info.index');
+        return view('admin.merchant.index');
     }
 
     /**
@@ -57,7 +57,7 @@ class MerchInfoController extends Controller
      */
     public function edit()
     {
-        return view('admin.merchant.merch_info.edit');
+        return view('admin.merchant.edit');
         
     }
 
@@ -82,5 +82,10 @@ class MerchInfoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function callReport(){
+
+        return view('admin.merchant.callReport');
     }
 }

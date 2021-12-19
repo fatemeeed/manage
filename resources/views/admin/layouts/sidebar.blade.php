@@ -182,8 +182,8 @@
 
                 <section class="sidebar-dropdown" >
 
-                    <a href="{{ route('admin.merchant.merch_info.index') }}"> جستجوی اطلاعات پذیرنده  </a>
-                    <a href="{{ route('admin.merchant.call_report.index') }}">  سوابق تماس  </a>
+                    <a href="{{ route('admin.merchant.index') }}"> جستجوی اطلاعات پذیرنده  </a>
+                    <a href="{{ route('admin.merchant.callReport') }}">  سوابق تماس  </a>
 
                 </section>
 
@@ -209,7 +209,7 @@
 
                     
                     <a href="{{ route('admin.control.marketing.index') }}">  بازاریابی ها </a>
-                    <a href="">عملکرد بازاریابی </a>
+                    <a href="{{ route('admin.control.marketing.evaluation') }}">ارزیابی بازاریابی </a>
 
                 </section>
 
@@ -231,9 +231,9 @@
 
                 <section class="sidebar-dropdown" >
 
-                    <a href=""> گزارش نصب پایانه ها </a>
-                    <a href=""> منصوبه فاقد تراکنش </a>
-                    <a href=""> عملکرد دوره ای نصب </a>
+                    <a href="{{ route('admin.control.install.waitingInstall') }}"> پایانه های در انتظار نصب </a>
+                    <a href="{{ route('admin.control.install.installNoTransaction') }}"> منصوبه فاقد تراکنش </a>
+                    <a href="{{ route('admin.control.install.installEvaluation') }}"> عملکرد دوره ای نصب </a>
                    
 
                 </section>

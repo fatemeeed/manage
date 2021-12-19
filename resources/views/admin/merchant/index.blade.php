@@ -154,7 +154,7 @@
                            
                             <td class="width-8-rem text-left">
 
-                                <a href="{{ route('admin.merchant.merch_info.edit') }}" class="btn btn-warning btn-sm" ><i class="fa fa-edit"></i> ویرایش  </a>
+                                <a href="{{ route('admin.merchant.edit') }}" class="btn btn-warning btn-sm" ><i class="fa fa-edit"></i> ویرایش  </a>
                                 
                             </td>
                             

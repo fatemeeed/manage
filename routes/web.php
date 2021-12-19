@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\Content\DeviceController;
 use App\Http\Controllers\Admin\Content\FormItemController;
 use App\Http\Controllers\Admin\Content\ProjectController;
+use App\Http\Controllers\Admin\Control\InstallController;
 use App\Http\Controllers\Admin\Control\MarketingController;
 use App\Http\Controllers\Admin\Customer\MerchInfoController;
 use App\Http\Controllers\Admin\Customer\CallController;
@@ -126,16 +127,10 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
     
         Route::prefix('merchant')->group(function(){
 
-            Route::get('/',[MerchInfoController::class,'index'])->name('admin.merchant.merch_info.index');
-            Route::get('/edit',[MerchInfoController::class,'edit'])->name('admin.merchant.merch_info.edit');
-            Route::post('/update',[MerchInfoController::class,'update'])->name('admin.merchant.merch_info.update');
-
-        });
-
-        Route::prefix('call_report')->group(function(){
-
-            Route::get('/',[CallController::class,'index'])->name('admin.merchant.call_report.index');
-            
+            Route::get('/',[MerchInfoController::class,'index'])->name('admin.merchant.index');
+            Route::get('/edit',[MerchInfoController::class,'edit'])->name('admin.merchant.edit');
+            Route::post('/update',[MerchInfoController::class,'update'])->name('admin.merchant.update');
+            Route::get('/call-report',[MerchInfoController::class,'callReport'])->name('admin.merchant.callReport');
 
         });
 
@@ -154,16 +149,19 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
             Route::post('/store',[MarketingController::class,'store'])->name('admin.control.marketing.store');
             Route::get('/edit',[MarketingController::class,'edit'])->name('admin.control.marketing.edit');
             Route::post('/update',[MarketingController::class,'update'])->name('admin.control.marketing.update');
+            Route::get('/marketing-evaluation',[MarketingController::class,'marketingEvaluation'])->name('admin.control.marketing.evaluation');
 
         });
 
-        Route::prefix('call_report')->group(function(){
+        Route::prefix('install')->group(function(){
 
-            Route::get('/',[CallController::class,'index'])->name('admin.merchant.call_report.index');
-            
+            Route::get('/waiting-install',[InstallController::class,'waitingInstall'])->name('admin.control.install.waitingInstall');
+            Route::get('/install-no-transaction',[InstallController::class,'installNoTransaction'])->name('admin.control.install.installNoTransaction');
+            Route::get('/install-evaluation',[InstallController::class,'installEvaluation'])->name('admin.control.install.installEvaluation');
 
         });
 
+        
 
     });
 

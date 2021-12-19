@@ -24,7 +24,8 @@ class MarketingController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.control.marketing.create');
+        
     }
 
     /**
@@ -81,5 +82,11 @@ class MarketingController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function marketingEvaluation(){
+
+        return view('admin.control.marketing.evaluation');
+
     }
 }
