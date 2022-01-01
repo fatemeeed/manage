@@ -52,8 +52,8 @@
 
                                     <section class="info-box-body">
 
-                                        <h5>درصد پشتیبانی</h5>
-                                        <p>80%</p>
+                                        <h5>نقص مدارک</h5>
+                                        <p>30%</p>
 
                                     </section>
 
@@ -87,8 +87,8 @@
 
                                     <section class="info-box-body">
 
-                                        <h5>درصد پشتیبانی</h5>
-                                        <p>80%</p>
+                                        <h5>بازدید EM</h5>
+                                        <p>15</p>
 
                                     </section>
 
@@ -122,8 +122,8 @@
 
                                     <section class="info-box-body">
 
-                                        <h5>درصد پشتیبانی</h5>
-                                        <p>80%</p>
+                                        <h5>در انتظار نصب</h5>
+                                        <p>16</p>
 
                                     </section>
 

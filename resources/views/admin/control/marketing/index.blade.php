@@ -105,7 +105,7 @@
                 <div class="max-width-16-rem">
 
                     <a  class="btn btn-info btn-sm" href="">فایل اکسل</a>
-                    <a  class="btn btn-info btn-sm" href="{{ route('admin.control.marketing.create') }}">افزودن</a>
+                    <a  class="btn btn-success btn-sm" href="{{ route('admin.control.marketing.create') }}"><i class="fa fa-plus-square"></i> افزودن بازاریابی جدید</a>
 
 
                 </div>

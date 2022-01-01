@@ -311,4 +311,18 @@ button{
     font-size: .8rem;
 }
 
+.dropdown-item{
+    padding: .4rem;
+    font-size: .8rem;
+    line-height: 1.4rem;
+    text-align: right;
+}
+
+.dropdown-item>i{
+    text-align: center;
+    width: 2rem;
+
+}
+
+
 
