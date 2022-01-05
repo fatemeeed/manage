@@ -2,7 +2,7 @@
 
 @section('head-tag')
 
-<title>  نمایش تیکت ها </title>
+<title>  نمایش تیکت  </title>
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
       <li class="breadcrumb-item font-size-12"><a href="#"> خانه </a></li>
       <li class="breadcrumb-item font-size-12"><a href="#"> بخش تیکت </a></li>
       <li class="breadcrumb-item font-size-12"><a href="#"> تیکت ها  </a></li>
-      <li class="breadcrumb-item font-size-12 active" aria-current="page"> نمایش تیکت ها   </li>
+      <li class="breadcrumb-item font-size-12 active" aria-current="page">نمایش تیکت    </li>
     </ol>
   </nav>
 

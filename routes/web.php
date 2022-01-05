@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\Equipment\PspDeliveryController;
 use App\Http\Controllers\Admin\Equipment\ReceiptController;
 use App\Http\Controllers\Admin\Equipment\RolDashboardController;
 use App\Http\Controllers\Admin\Equipment\TechDeliveryController;
+use App\Http\Controllers\Admin\Ticket\TicketController;
 use App\Http\Controllers\Admin\Transaction\TransactionController;
 use App\Http\Controllers\Admin\User\AdminUserController;
 use App\Http\Controllers\Admin\User\PermissionController;
@@ -234,9 +235,6 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
             Route::get('/',[CollectController::class,'collect'])->name('admin.control.collect.collectReport');
            
         });
-
-  
-
         
 
     });

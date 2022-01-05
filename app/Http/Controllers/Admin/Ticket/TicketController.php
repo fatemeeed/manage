@@ -7,6 +7,19 @@ use Illuminate\Http\Request;
 
 class TicketController extends Controller
 {
+
+    public function newTickets()
+    {
+        return view('admin.ticket.index');
+    }
+    public function openTickets()
+    {
+        return view('admin.ticket.index');
+    }
+    public function closeTickets()
+    {
+        return view('admin.ticket.index');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -45,7 +58,7 @@ class TicketController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         return view('admin.ticket.show');
         
