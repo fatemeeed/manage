@@ -1,12 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Customer;
+namespace App\Http\Controllers\Admin\Merchant;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class MerchInfoController extends Controller
+class CallController extends Controller
 {
+
+    public function callReport(){
+
+        return view('admin.merchant.callReport');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,7 @@ class MerchInfoController extends Controller
      */
     public function index()
     {
-        return view('admin.merchant.index');
+        //
     }
 
     /**
@@ -55,10 +60,9 @@ class MerchInfoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return view('admin.merchant.edit');
-        
+        //
     }
 
     /**
@@ -82,10 +86,5 @@ class MerchInfoController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function callReport(){
-
-        return view('admin.merchant.callReport');
     }
 }

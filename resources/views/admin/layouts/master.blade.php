@@ -16,6 +16,7 @@
         @include('admin.layouts.sidebar')
 
         <section id="main-body" class="main-body">
+            
 
             @yield('content')
 

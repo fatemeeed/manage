@@ -105,17 +105,21 @@
     top: 3.5rem;
     z-index: 10000;
     width: 15rem;
-
 }
 
 .sidebar-wrapper{
     padding: 1rem 0;
     overflow: auto;
     height: 100%;
+    -ms-overflow-style: none;
+    scrollbar-color: transparent transparent;
 
 }
 
 .sidebar-wrapper::-webkit-scrollbar{
+    display: none;
+}
+.sidebar-wrapper::-moz-scrollbar{
     display: none;
 }
 
@@ -217,7 +221,7 @@ button{
     transition: all .3s;
 }
 
-.sidebar-dropdown a::before , 
+.sidebar-dropdown a::before ,
 .sidebar-dropdown button::before{
     content: '>>';
     margin: .8rem;
@@ -310,19 +314,5 @@ button{
 
     font-size: .8rem;
 }
-
-.dropdown-item{
-    padding: .4rem;
-    font-size: .8rem;
-    line-height: 1.4rem;
-    text-align: right;
-}
-
-.dropdown-item>i{
-    text-align: center;
-    width: 2rem;
-
-}
-
 
 

@@ -10,8 +10,8 @@ use App\Http\Controllers\Admin\Control\EMController;
 use App\Http\Controllers\Admin\Control\InstallController;
 use App\Http\Controllers\Admin\Control\MarketingController;
 use App\Http\Controllers\Admin\Control\PMController;
-use App\Http\Controllers\Admin\Customer\MerchInfoController;
-use App\Http\Controllers\Admin\Customer\CallController;
+use App\Http\Controllers\Admin\Merchant\MerchInfoController;
+use App\Http\Controllers\Admin\Merchant\CallController;
 use App\Http\Controllers\Admin\Equipment\AttributionController;
 use App\Http\Controllers\Admin\Equipment\EquipDashboardController;
 use App\Http\Controllers\Admin\Equipment\PspDeliveryController;
@@ -66,12 +66,48 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
 
     });
 
+
     //user
     Route::prefix('user')->namespace('User')->group(function(){
+        
+        //admin-user
+        Route::prefix('admin-user')->group(function(){ 
 
+            Route::get('/',[AdminUserController::class,'index'])->name('admin.user.admin-user.index');
+            Route::get('/create',[AdminUserController::class,'create'])->name('admin.user.admin-user.create');
+            Route::post('/store',[AdminUserController::class,'store'])->name('admin.user.admin-user.store');
+            Route::get('/edit/{id}',[AdminUserController::class,'edit'])->name('admin.user.admin-user.edit');
+            Route::put('/update/{id}',[AdminUserController::class,'update'])->name('admin.user.admin-user.update');
+            Route::delete('/destroy/{id}',[AdminUserController::class,'destroy'])->name('admin.user.admin-user.destroy');
 
+        });
+
+        //role
+        Route::prefix('role')->group(function(){ 
+
+            Route::get('/',[RoleController::class,'index'])->name('admin.user.role.index');
+            Route::get('/create',[RoleController::class,'create'])->name('admin.user.role.create');
+            Route::post('/store',[RoleController::class,'store'])->name('admin.user.role.store');
+            Route::get('/edit/{id}',[RoleController::class,'edit'])->name('admin.user.role.edit');
+            Route::put('/update/{id}',[RoleController::class,'update'])->name('admin.user.role.update');
+            Route::delete('/destroy/{id}',[RoleController::class,'destroy'])->name('admin.user.role.destroy');
+
+        });
+
+        //permission
+        Route::prefix('permission')->group(function(){ 
+
+            Route::get('/',[PermissionController::class,'index'])->name('admin.user.permission.index');
+            Route::get('/create',[PermissionController::class,'create'])->name('admin.user.permission.create');
+            Route::post('/store',[PermissionController::class,'store'])->name('admin.user.permission.store');
+            Route::get('/edit/{id}',[PermissionController::class,'edit'])->name('admin.user.permission.edit');
+            Route::put('/update/{id}',[PermissionController::class,'update'])->name('admin.user.permission.update');
+            Route::delete('/destroy/{id}',[PermissionController::class,'destroy'])->name('admin.user.permission.destroy');
+
+        });
 
     });
+
 
     //content
     Route::prefix('content')->namespace('Content')->group(function(){
@@ -167,17 +203,12 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
 
 
     //merchant
-    Route::prefix('customers')->namespace('Customer')->group(function(){
-
-    
-        Route::prefix('merchant')->group(function(){
+    Route::prefix('merchant')->namespace('Merchant')->group(function(){
 
             Route::get('/',[MerchInfoController::class,'index'])->name('admin.merchant.index');
             Route::get('/edit',[MerchInfoController::class,'edit'])->name('admin.merchant.edit');
             Route::post('/update',[MerchInfoController::class,'update'])->name('admin.merchant.update');
-            Route::get('/call-report',[MerchInfoController::class,'callReport'])->name('admin.merchant.callReport');
-
-        });
+            Route::get('/call-report',[CallController::class,'callReport'])->name('admin.merchant.callReport');
 
 
     });
@@ -258,45 +289,6 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
 
     });
 
-    Route::prefix('user')->namespace('User')->group(function(){
-        
-        //admin-user
-        Route::prefix('admin-user')->group(function(){ 
-
-            Route::get('/',[AdminUserController::class,'index'])->name('admin.user.admin-user.index');
-            Route::get('/create',[AdminUserController::class,'create'])->name('admin.user.admin-user.create');
-            Route::post('/store',[AdminUserController::class,'store'])->name('admin.user.admin-user.store');
-            Route::get('/edit/{id}',[AdminUserController::class,'edit'])->name('admin.user.admin-user.edit');
-            Route::put('/update/{id}',[AdminUserController::class,'update'])->name('admin.user.admin-user.update');
-            Route::delete('/destroy/{id}',[AdminUserController::class,'destroy'])->name('admin.user.admin-user.destroy');
-
-        });
-
-        //role
-        Route::prefix('role')->group(function(){ 
-
-            Route::get('/',[RoleController::class,'index'])->name('admin.user.role.index');
-            Route::get('/create',[RoleController::class,'create'])->name('admin.user.role.create');
-            Route::post('/store',[RoleController::class,'store'])->name('admin.user.role.store');
-            Route::get('/edit/{id}',[RoleController::class,'edit'])->name('admin.user.role.edit');
-            Route::put('/update/{id}',[RoleController::class,'update'])->name('admin.user.role.update');
-            Route::delete('/destroy/{id}',[RoleController::class,'destroy'])->name('admin.user.role.destroy');
-
-        });
-
-        //permission
-        Route::prefix('permission')->group(function(){ 
-
-            Route::get('/',[PermissionController::class,'index'])->name('admin.user.permission.index');
-            Route::get('/create',[PermissionController::class,'create'])->name('admin.user.permission.create');
-            Route::post('/store',[PermissionController::class,'store'])->name('admin.user.permission.store');
-            Route::get('/edit/{id}',[PermissionController::class,'edit'])->name('admin.user.permission.edit');
-            Route::put('/update/{id}',[PermissionController::class,'update'])->name('admin.user.permission.update');
-            Route::delete('/destroy/{id}',[PermissionController::class,'destroy'])->name('admin.user.permission.destroy');
-
-        });
-
-    });
 
     
     Route::prefix('setting')->namespace('Setting')->group(function(){
